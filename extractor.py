@@ -87,7 +87,7 @@ def restartContainerWithDomains(domains):
 
 def createCerts(args):
     # Read JSON file
-    data = json.loads(open(args.certificate).read())
+    data = json.loads(open(args.certificate).read())["myhttpchallenge"]
 
     # Determine ACME version
     acme_version = 2 if 'acme-v02' in data['Account']['Registration']['uri'] else 1
